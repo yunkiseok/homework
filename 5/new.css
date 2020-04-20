@@ -1,0 +1,149 @@
+body{
+    width: 100%;
+    height: 712px;
+    background-color: rgb(245, 245, 245);
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+    background-color: white ;
+    box-sizing: border-box;
+    padding: 1% 11%;
+    width: 100%;
+}
+.top-logo{
+    width: 100px;
+    height: 40px;
+}
+
+.search{
+    border: 1px solid gray;
+    width: 400%;
+    height: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: gray;
+    background-color: rgb(245, 245, 245);
+}
+.top-icon{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+    height: 4%;
+    margin-left: 20%;
+}
+.circle{
+    width: 30px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 1px solid black;
+    padding: 2px;
+}
+.profile-photo{
+    padding-right: 4%;
+}
+
+.profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 17%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.photo{
+    height: 10%;
+    width: 140px;
+    border-radius: 50%;
+    border: 1px solid lightgray;
+}
+
+
+.icon{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2%;
+    padding-left: 10%;
+    width: 100%;
+}
+.box1{
+    font-size: 25px;
+}
+.box2{
+    border: 1px solid gray;
+    font-weight: bold;
+    border-radius: 3px;
+    font-size: 14px;
+    padding: 5px;
+}
+.category{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.saved{
+    display: flex;
+    justify-content: center;
+    padding: 0 10%;
+    border-top:1px solid lightgray;
+    width: 60%;
+    font-size: 1em;
+}
+#iiii{
+    font-size: 1em;
+}
+.save{
+    padding: 4%;
+    color: gray;
+}
+.sav{
+    padding: 4%;
+    color: black;
+    border-top: 1px solid black;
+}
+.mid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 11%;
+    width: 90%;
+    box-sizing: border-box;
+
+}
+.mid-photo{
+    margin-bottom: 2%;
+    width: 95%;
+    height: 95%;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+@media(max-width:768px) { 
+    .top-search{
+        display: none;
+    }
+    .category{
+        font-size: 10px;
+    }
+    .profile-info{
+        font-size: 10px;
+    }
+    .icon{
+        font-size: 10px;
+    }
+    img{
+        width: 100%;
+        height: 100%;
+    }
+    .box2{
+        display: none;
+    }
+}
