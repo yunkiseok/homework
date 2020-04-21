@@ -1,4 +1,4 @@
-def gugudan(n):
+def gugudan_even_or_odd(n):
     if n % 2 == 0:
         return gugudan_even()
     else:
@@ -13,7 +13,7 @@ def gugudan_odd():
         for p in range(1, 10):
             print("%d x %d = %d" % (i, p, i*p))
 
-gugudan(2)
-gugudan(5)
+gugudan_even_or_odd(2)
+gugudan_even_or_odd(5)
 
 
