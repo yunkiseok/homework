@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'result.css' %}"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class = "center">
+        <div class = "container">
+            <div class = "content center">
+                {{text}}
+            </div> 
+            <div class = "footer">
+                <div class = "bottom">
+                    <div class = "korean center">
+                        공백포함 글자수
+                    </div> 
+                    <div class = "number center">
+                        {{total_len}}
+                    </div>
+                </div>
+                <div class = "bottom">
+                    <div class = "korean center">
+                        공백제외 글자수
+                    </div> 
+                    <div class = "number center">
+                        {{no_blank_len}}
+                    </div>
+                </div>
+                <div class = "bottom">
+                    <div class = "korean center">
+                        단어 개수
+                    </div> 
+                    <div class = "number center">
+                        {{word_len}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

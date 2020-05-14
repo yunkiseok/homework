@@ -1,0 +1,48 @@
+.container{
+    height: 30rem;
+    width: 60%;
+    border: 1px solid black;
+    border-radius: 3%;
+    position: relative;
+}
+.content{
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 1.5rem;
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+}
+.bottom{
+    height: 20%;
+    border: 1px solid lightgray;
+    width: 100%;
+}
+.korean{
+    height: 30%;
+    border-bottom: 1px solid lightgray; 
+    font-size: 1rem;
+    font-weight: 700;
+}
+.number{
+    height: 70%;
+    font-size: 3rem;
+    color: blue;
+    font-weight: 900;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
