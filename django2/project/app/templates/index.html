@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>게시판 카테고리</h1>
+    <div>
+        <a href="{% url 'movie_name' %}"> movie</a> ({{movie_num}})
+    </div>
+    <div>
+    <a href="{% url 'drama_name' %}"> drama</a> ({{drama_num}})
+    </div>
+    <div>
+    <a href="{% url 'entertain_name' %}"> entertain</a> ({{entertain_num}})
+    </div>
+    <div>
+        <a href="{% url 'new_name' %}">글쓰러가기</a>
+    </div>
+</body>
+</html>
