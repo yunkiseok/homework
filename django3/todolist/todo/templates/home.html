@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %} 
+    <link rel="stylesheet" type="text/css" href="{% static 'todo.css' %}"> 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header center">TO-DO-LIST 게시판</div>
+    {% for post in posts %}
+    <div class="content around yellow">
+        <div class="title font15">
+            <span class="material-icons">done</span>
+            <a href="{% url 'detailname' post.pk %}">{{post.title}}</a>
+        </div>
+        <div class="font12">{{post.due|timeuntil}} 남음</div>
+    </div>    
+    {% endfor %}
+    <div class="bottom">
+        <a class="button" href="{% url 'newname' %}">일정추가하기</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %} 
+    <link rel="stylesheet" type="text/css" href="{% static 'todo.css' %}"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class = "header left">{{post.title}}</div>
+    <div class="textbox">{{post.content}}</div>
+    <div class="center">
+        <div class="center date">마감기한 : {{post.due}} </div>
+        <div class="center date">{{post.due|timeuntil}} 남음</div>
+    </div>
+    <div class="bottom">
+        <div><a class="button" href="{% url 'homename' %}">홈으로</a></div>
+        <div><a class="button" href="{% url 'editname' post.pk %}">수정하기</a></div>
+        <div><a class="button" href="{% url 'deletename' post.pk %}">삭제하기</a></div>
+    </div>
+</body>
+</html>
