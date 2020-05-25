@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% extends 'base.html' %}
     {% load static %} 
     <link rel="stylesheet" type="text/css" href="{% static 'todo.css' %}"> 
     <meta charset="UTF-8">
@@ -8,6 +9,7 @@
     <title>Document</title>
 </head>
 <body>
+    {% block content %}
     <div class = "header left">{{post.title}}</div>
     <div class="textbox">{{post.content}}</div>
     <div class="center">
@@ -19,5 +21,23 @@
         <div><a class="button" href="{% url 'editname' post.pk %}">수정하기</a></div>
         <div><a class="button" href="{% url 'deletename' post.pk %}">삭제하기</a></div>
     </div>
+    <div>
+        <div class="start left space bold">댓글쓰기</div>
+        <form method="POST">
+        {% csrf_token %}
+        <textarea class="commentbox space left" type="text" name="content" placeholder="내용을 입력하세요">{{comment.content}}</textarea>
+        <div class="bottom space"><button class="green" type="submit">등록</button></div>
+        </form>
+    </div>
+    {% for comment in post.comments.all %}
+    <div class="space padd">
+        <div class="comment">
+            {{comment.content}}
+            <a class="font5" href="{% url 'delete_comment' post.pk comment.pk %}">댓글 삭제</a>
+        </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% endblock content %}
 </body>
 </html>

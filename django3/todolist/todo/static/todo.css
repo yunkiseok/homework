@@ -1,12 +1,27 @@
 body{
     width: 60%;
 }
+.base{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: darkorange;
+    margin-bottom: 5%;
+}
+.font5{
+    font-size: 0.5rem;
+}
 .font15{
     font-size: 1.5rem;
 }
 .font12{
     font-size: 1.2rem;
     color: sienna;
+    font-weight: 500;
+}
+.bold{
     font-weight: 500;
 }
 .yellow{
@@ -31,16 +46,16 @@ body{
     display: flex;
     justify-content: flex-end;
 }
+.header{
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 2%;
+}
 .button{
     margin: 0.5rem;
     color: white;
     width: 6rem;
     background-color: skyblue;
-}
-.header{
-    font-size: 2.5rem;
-    font-weight: 500;
-    margin-bottom: 5%;
 }
 .content{
     border: 1px solid black;
@@ -83,4 +98,29 @@ body{
     padding-left: 5%;
     box-sizing: border-box;
     width: 100%;
+}
+.comment{
+    width: 95%;
+    height: 3rem;
+    border-bottom: 1px solid gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5%;
+}
+.green{
+    background-color: green;
+    color: white;
+    border: 1px solid white
+}
+.commentbox{
+    border: 1px solid black;
+    width: 95%;
+    height: 5rem;
+    padding: 4%;
+    box-sizing: border-box;
+}
+.padd{
+    padding: 1%;
+    box-sizing: border-box;
 }

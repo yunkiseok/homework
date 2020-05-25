@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% extends 'base.html' %}
     {% load static %} 
     <link rel="stylesheet" type="text/css" href="{% static 'todo.css' %}"> 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -9,7 +10,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="header center">TO-DO-LIST 게시판</div>
+    {% block content %}
     {% for post in posts %}
     <div class="content around yellow">
         <div class="title font15">
@@ -22,5 +23,6 @@
     <div class="bottom">
         <a class="button" href="{% url 'newname' %}">일정추가하기</a>
     </div>
+    {% endblock content %}
 </body>
 </html>
