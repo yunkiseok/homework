@@ -20,9 +20,11 @@
         <div class="font12">{{post.due|timeuntil}} 남음</div>
     </div>    
     {% endfor %}
+    {% if user.is_authenticated %}
     <div class="bottom">
         <a class="button" href="{% url 'newname' %}">일정추가하기</a>
     </div>
+    {% endif %}
     {% endblock content %}
 </body>
 </html>

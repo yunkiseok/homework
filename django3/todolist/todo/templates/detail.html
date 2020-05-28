@@ -18,22 +18,28 @@
     </div>
     <div class="bottom">
         <div><a class="button" href="{% url 'homename' %}">홈으로</a></div>
+        {% if user.is_authenticated and post.author.pk == user.pk %}
         <div><a class="button" href="{% url 'editname' post.pk %}">수정하기</a></div>
         <div><a class="button" href="{% url 'deletename' post.pk %}">삭제하기</a></div>
+        {% endif %}
     </div>
     <div>
+        {% if user.is_authenticated %}
         <div class="start left space bold">댓글쓰기</div>
         <form method="POST">
         {% csrf_token %}
         <textarea class="commentbox space left" type="text" name="content" placeholder="내용을 입력하세요">{{comment.content}}</textarea>
         <div class="bottom space"><button class="green" type="submit">등록</button></div>
         </form>
+        {% endif %}
     </div>
     {% for comment in post.comments.all %}
     <div class="space padd">
         <div class="comment">
             {{comment.content}}
+            {% if user.is_authenticated and comment.author.pk == user.pk %}
             <a class="font5" href="{% url 'delete_comment' post.pk comment.pk %}">댓글 삭제</a>
+            {% endif %}
         </div>
         </div>
     </div>
