@@ -12,6 +12,7 @@
     {% block content %}
     <div class = "header left">{{post.title}}</div>
     <div class="textbox">{{post.content}}</div>
+    <img src="{{post.img}}" alt = "{{post.title}}">
     <div class="center">
         <div class="center date">마감기한 : {{post.due}} </div>
         <div class="center date">{{post.due|timeuntil}} 남음</div>

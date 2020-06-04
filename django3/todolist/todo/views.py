@@ -4,6 +4,11 @@ import datetime
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
+# from .utils import upload_and_save
+from todolist.settings import AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_STORAGE_BUCKET_NAME, AWS_S3_REGION_NAME, AWS_S3_FILE_OVERWRITE
+import boto3
+from boto3.session import Session
+from datetime import datetime
 
 # Create your views here.
 def home(request):
@@ -13,11 +18,26 @@ def home(request):
 @login_required(login_url='/registration/login')
 def new(request):
     if request.method == "POST":
+        file_to_upload = request.FILES.get("img")
+        session = Session(
+        aws_access_key_id = AWS_ACCESS_KEY_ID,
+        aws_secret_access_key = AWS_SECRET_ACCESS_KEY,
+        region_name = AWS_S3_REGION_NAME
+        )
+        s3 = session.resource("s3")
+        now = datetime.now().strftime("%Y%H%M%S")
+
+        img_object = s3.Bucket(AWS_STORAGE_BUCKET_NAME).put_object(
+            Key = str(request.user.pk)+'/'+now + file_to_upload.name,
+            Body = file_to_upload
+        )
+        s3_url = "https://django-file-upload2.s3.ap-northeast-2.amazonaws.com/"     
         new_post = Post.objects.create(
             title = request.POST['title'],
             content = request.POST['content'],
             due = request.POST['due'],
-            author = request.user
+            author = request.user,
+            img = s3_url+str(request.user.pk)+'/'+now + file_to_upload.name
         )
         return redirect('detailname', new_post.pk)
     return render(request, 'new.html')

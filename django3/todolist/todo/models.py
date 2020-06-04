@@ -7,6 +7,7 @@ class Post(models.Model):
     content = models.TextField()
     due = models.DateTimeField(null=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts')
+    img = models.TextField(null=True)
 
     def __str__(self):
         return self.title
