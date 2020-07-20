@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>글자 수 세기</h1>
+    <textarea cols="50" rows="10" id="text"></textarea>
+    <p class='include'>공백 포함 글자 수 : </p>
+    <p class='exclude'>공백 제외 글자 수 : </p>
+</body>
+
+<script>
+    const input = document.querySelector('#text')
+    const included = document.querySelector('.include')
+    const excluded = document.querySelector('.exclude')
+
+    function count(event) {
+        let inputValue = ''
+        inputValue = event.target.value;
+        included.textContent = '공백 포함 글자 수 : ' + inputValue.length
+        excluded.textContent = '공백 제외 글자 수 : ' + inputValue.split(' ').join('').length
+    }
+
+    input.addEventListener('keydown', count)
+</script>
+</html>
